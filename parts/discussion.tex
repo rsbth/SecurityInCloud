@@ -1,0 +1,7 @@
+\section{Discussion}
+
+\begin{itemize}
+\item{} This study is about finding a protocol which is abuse-free, optimistic and fair for any number of signer, and we've provided examples of such protocols. All the optimistic protocols we've seen have the same structure : Signers exchange during one or several rounds their commitment to a pre-agreed contract. When those rounds are over, signers send their signature, and the TTP is able to derive a signer's signature from his commitment.
+\item{} Another point of interest was the load on the TTP. Optimistic protocols are great at reducing the load because the TTP is only called in case of failure in the protocol. Meaning, during a normal execution of a contract signature, the TTP is not called. Ways to handle the TTP differ amongst protocols. The RSA based protocols \cite{wang-rsa}\cite{Chen} require a step of registration to the TTP, whereas in \cite{Original} and \cite{DAG-MPCS} the TTP is not even aware of the signature.
+\item{} The final step would be to throw away the TTP, which is theoretically possible using a peer-to-peer network, but hard to put in practice. However, we believe that by using a structure inspired by bitcoin's protocol it is possible to create an abuse-free, fair MPCS without any TTP.
+\end{itemize}
